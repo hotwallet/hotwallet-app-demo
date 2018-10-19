@@ -9,7 +9,8 @@ HotWallet.getTransactions()
       '</div>'
     ].join('\n')
 
-    document.getElementsByTagName('main')[0].appendChild(html)
+    var existingHTML = document.getElementsByTagName('main')[0].innerHTML
+    document.getElementsByTagName('main')[0].innerHTML = existingHTML + html
   })
 
 HotWallet.rpc('getBalances').then(function (balances) {
