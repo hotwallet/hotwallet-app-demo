@@ -1,13 +1,13 @@
 {
-  "main.css": "/hotwallet-app-news/static/css/main.72959f85.chunk.css",
-  "main.js": "/hotwallet-app-news/static/js/main.07fc22aa.chunk.js",
-  "main.js.map": "/hotwallet-app-news/static/js/main.07fc22aa.chunk.js.map",
+  "main.css": "/hotwallet-app-news/static/css/main.9d1a2cc5.chunk.css",
+  "main.js": "/hotwallet-app-news/static/js/main.07d3bc26.chunk.js",
+  "main.js.map": "/hotwallet-app-news/static/js/main.07d3bc26.chunk.js.map",
   "static/js/1.d874d094.chunk.js": "/hotwallet-app-news/static/js/1.d874d094.chunk.js",
   "static/js/1.d874d094.chunk.js.map": "/hotwallet-app-news/static/js/1.d874d094.chunk.js.map",
   "runtime~main.js": "/hotwallet-app-news/static/js/runtime~main.42a96ec1.js",
   "runtime~main.js.map": "/hotwallet-app-news/static/js/runtime~main.42a96ec1.js.map",
-  "static/css/main.72959f85.chunk.css.map": "/hotwallet-app-news/static/css/main.72959f85.chunk.css.map",
+  "static/css/main.9d1a2cc5.chunk.css.map": "/hotwallet-app-news/static/css/main.9d1a2cc5.chunk.css.map",
   "index.html": "/hotwallet-app-news/index.html",
-  "precache-manifest.cc9407645fbe19d875a1485411b0b56d.js": "/hotwallet-app-news/precache-manifest.cc9407645fbe19d875a1485411b0b56d.js",
+  "precache-manifest.e3767366e74bd85961ab55693135d340.js": "/hotwallet-app-news/precache-manifest.e3767366e74bd85961ab55693135d340.js",
   "service-worker.js": "/hotwallet-app-news/service-worker.js"
 }

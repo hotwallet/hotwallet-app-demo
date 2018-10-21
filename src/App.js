@@ -51,7 +51,7 @@ class App extends React.PureComponent {
         <h1>Crypto News</h1>
         <Grid columns={2} divided>
           <Grid.Row>
-            <Grid.Column className="left-pane">
+            <Grid.Column id="left-pane">
               {this.props.news.map(article => {
                 const age = formatDistance(article.publishedAt, new Date(), { addSuffix: true })
                 return (
@@ -68,6 +68,13 @@ class App extends React.PureComponent {
             </Grid.Column>
             <Grid.Column id="right-pane">
               <div>
+                {this.state.article.image ?
+                  <div
+                    className="img"
+                    style={{
+                      backgroundImage: `url("${this.state.article.image}")`
+                    }}
+                  /> : ''}
                 <h2>{this.state.article.title}</h2>
                 <p>{format(this.state.article.publishedAt, 'eeee, MMMM do yyyy')}</p>
                 <p className="description">{this.state.article.description}</p>
