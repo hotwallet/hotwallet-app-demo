@@ -1,2 +1,5 @@
-# hotwallet-app-demo
-HotWallet Platform Demo App
+# hotwallet-app-news
+
+Crypto News App
+
+[https://hotwallet.com/apps/news](https://hotwallet.com/apps/news)
