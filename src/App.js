@@ -87,7 +87,7 @@ class App extends React.PureComponent {
                     data-url={this.state.article.url}
                     color="black"
                     onClick={this.goToStory}
-                  >Read more</Button>
+                  >Read full article</Button>
                 </p>
               </div>
             </Grid.Column>
