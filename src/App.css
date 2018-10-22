@@ -5,6 +5,7 @@ body {
 
 main {
   position: relative;
+  margin-top: 25px;
 }
 
 article {
@@ -60,6 +61,22 @@ h2 {
   font-size: 26px;
 }
 
-.description {
+.mobile-description {
+  display: none;
+}
+.mobile-description > p {
+  margin-top: 10px;
+  color: #999;
+}
+.mobile-description .button {
+  margin-top: 15px;
+}
 
+@media screen and (max-width: 600px) {
+  .grid {
+    width: 200%;
+  }
+  .mobile-description {
+    display: block;
+  }
 }

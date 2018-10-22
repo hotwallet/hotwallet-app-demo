@@ -33,7 +33,7 @@ class App extends React.PureComponent {
 
   onClickArticle = event => {
     const el = event.target
-    const url = el.parentNode.getAttribute('data-url') || el.getAttribute('data-url')
+    const url = el.closest('article').getAttribute('data-url') || el.getAttribute('data-url')
     this.setState({
       article: this.props.news.find(article => article.url === url)
     })
@@ -41,7 +41,7 @@ class App extends React.PureComponent {
 
   goToStory = event => {
     const el = event.target
-    const url = el.parentNode.getAttribute('data-url') || el.getAttribute('data-url')
+    const url = el.closest('article').getAttribute('data-url') || el.getAttribute('data-url')
     window.open(url, '_blank')
   }
 
@@ -49,7 +49,7 @@ class App extends React.PureComponent {
     return (
       <main>
         <h1>Crypto News</h1>
-        <Grid columns={2} divided>
+        <Grid columns={2} divided className="grid">
           <Grid.Row>
             <Grid.Column id="left-pane">
               {this.props.news.map(article => {
@@ -60,8 +60,29 @@ class App extends React.PureComponent {
                     data-url={article.url}
                     onClick={this.onClickArticle}
                   >
-                    <span>{article.title}</span>
-                    <span className="age">{age} &bull; {this.getDomain(article.url)}</span>
+                    <div>
+                      <span>{article.title}</span>
+                      <span className="age">{age} &bull; {this.getDomain(article.url)}</span>
+                    </div>
+                    <div className="mobile-description">
+                      <p
+                        style={{
+                          display: article.url === this.state.article.url ? 'block' : 'none'
+                        }}
+                      >
+                        <div>
+                          {article.description}
+                        </div>
+                        <p>
+                          <Button
+                            size="medium"
+                            data-url={this.state.article.url}
+                            color="black"
+                            onClick={this.goToStory}
+                          >Full article</Button>
+                        </p>
+                      </p>
+                    </div>
                   </article>
                 )
               })}
