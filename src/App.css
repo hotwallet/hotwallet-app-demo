@@ -5,7 +5,6 @@ body {
 
 main {
   position: relative;
-  margin-top: 25px;
 }
 
 article {
@@ -38,9 +37,9 @@ article:hover {
   top: 0;
 }
 #right-pane > div {
-  position: fixed;
   padding: 25px;
   font-size: 16px;
+  position: absolute;
 }
 #right-pane > div > .img {
   margin-top: -25px;
@@ -50,12 +49,11 @@ article:hover {
 }
 
 h1 {
-  display: none;
   border-bottom: 1px solid #49525a;
   font-size: 21px;
   margin: 0;
   font-weight: 100;
-  padding: 25px;
+  padding: 15px 25px;
 }
 
 h2 {

@@ -32,9 +32,16 @@ class App extends React.PureComponent {
   }
 
   onClickArticle = event => {
+    const headerHeight = 58
+    const imageHeight = 225
     const el = event.target
-    const url = el.closest('article').getAttribute('data-url') || el.getAttribute('data-url')
+    const article = el.closest('article')
+    const bodyRect = document.body.getBoundingClientRect()
+    const articleRect = article.getBoundingClientRect()
+    const url = article.getAttribute('data-url') || el.getAttribute('data-url')
+    const top = Math.abs(bodyRect.top) + articleRect.top - headerHeight - imageHeight
     this.setState({
+      top: Math.max(top, 0),
       article: this.props.news.find(article => article.url === url)
     })
   }
@@ -65,14 +72,14 @@ class App extends React.PureComponent {
                       <span className="age">{age} &bull; {this.getDomain(article.url)}</span>
                     </div>
                     <div className="mobile-description">
-                      <p
+                      <div
                         style={{
                           display: article.url === this.state.article.url ? 'block' : 'none'
                         }}
                       >
-                        <div>
+                        <p>
                           {article.description}
-                        </div>
+                        </p>
                         <p>
                           <Button
                             size="medium"
@@ -81,14 +88,18 @@ class App extends React.PureComponent {
                             onClick={this.goToStory}
                           >Full article</Button>
                         </p>
-                      </p>
+                      </div>
                     </div>
                   </article>
                 )
               })}
             </Grid.Column>
             <Grid.Column id="right-pane">
-              <div>
+              <div
+                style={{
+                  top: this.state.top
+                }}
+              >
                 {this.state.article.image ?
                   <div
                     className="img"

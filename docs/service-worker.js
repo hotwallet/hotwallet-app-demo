@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/hotwallet-app-news/precache-manifest.eaefb3db123d5408bc8451c448dd2a30.js"
+  "/hotwallet-app-news/precache-manifest.4aa986cf8d5f62a3419b9f94c2e70227.js"
 );
 
 workbox.clientsClaim();
