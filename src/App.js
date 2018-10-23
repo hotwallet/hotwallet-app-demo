@@ -32,14 +32,13 @@ class App extends React.PureComponent {
   }
 
   onClickArticle = event => {
-    const headerHeight = 58
     const imageHeight = 225
     const el = event.target
     const article = el.closest('article')
     const bodyRect = document.body.getBoundingClientRect()
     const articleRect = article.getBoundingClientRect()
     const url = article.getAttribute('data-url') || el.getAttribute('data-url')
-    const top = Math.abs(bodyRect.top) + articleRect.top - headerHeight - imageHeight
+    const top = Math.abs(bodyRect.top) + articleRect.top - imageHeight
     this.setState({
       top: Math.max(top, 0),
       article: this.props.news.find(article => article.url === url)
@@ -55,26 +54,37 @@ class App extends React.PureComponent {
   render() {
     return (
       <main>
-        <h1>Crypto News</h1>
         <Grid columns={2} divided className="grid">
           <Grid.Row>
             <Grid.Column id="left-pane">
               {this.props.news.map(article => {
                 const age = formatDistance(article.publishedAt, new Date(), { addSuffix: true })
+                const isActive = article.url === this.state.article.url
                 return (
                   <article
                     key={article.url}
                     data-url={article.url}
                     onClick={this.onClickArticle}
+                    style={{
+                      borderRight: isActive ? '3px solid #1377af' : ''
+                    }}
                   >
                     <div>
-                      <span>{article.title}</span>
+                      <span
+                        style={{
+                          color: isActive ? '#fff' : '',
+                          fontWeight: isActive ? 'bold' : 'normal',
+                          fontSize: isActive ? 20 : 18
+                        }}
+                      >
+                        {article.title}
+                      </span>
                       <span className="age">{age} &bull; {this.getDomain(article.url)}</span>
                     </div>
                     <div className="mobile-description">
                       <div
                         style={{
-                          display: article.url === this.state.article.url ? 'block' : 'none'
+                          display: isActive ? 'block' : 'none'
                         }}
                       >
                         <p>
@@ -95,7 +105,8 @@ class App extends React.PureComponent {
               })}
             </Grid.Column>
             <Grid.Column id="right-pane">
-              <div
+              <article
+                data-url={this.state.article.url}
                 style={{
                   top: this.state.top
                 }}
@@ -119,9 +130,9 @@ class App extends React.PureComponent {
                     data-url={this.state.article.url}
                     color="black"
                     onClick={this.goToStory}
-                  >Read full article</Button>
+                  >Full article</Button>
                 </p>
-              </div>
+              </article>
             </Grid.Column>
           </Grid.Row>
         </Grid>
