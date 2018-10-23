@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/hotwallet-app-news/static/js/runtime~main.42a96ec1.js"
   },
   {
-    "revision": "5f886767ef7e3b31188f",
-    "url": "/hotwallet-app-news/static/js/main.5f886767.chunk.js"
+    "revision": "cbce1562bd7fd336e894",
+    "url": "/hotwallet-app-news/static/js/main.cbce1562.chunk.js"
   },
   {
     "revision": "d874d09434a4abdeb137",
     "url": "/hotwallet-app-news/static/js/1.d874d094.chunk.js"
   },
   {
-    "revision": "5f886767ef7e3b31188f",
-    "url": "/hotwallet-app-news/static/css/main.0b1486b6.chunk.css"
+    "revision": "cbce1562bd7fd336e894",
+    "url": "/hotwallet-app-news/static/css/main.fc791580.chunk.css"
   },
   {
-    "revision": "73307c5e9eb1d5ad60f3a65673e5c3ab",
+    "revision": "8b3b8a686437ae97527f216e291e6170",
     "url": "/hotwallet-app-news/index.html"
   }
 ];
