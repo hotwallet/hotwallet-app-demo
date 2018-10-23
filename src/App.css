@@ -79,6 +79,9 @@ h2:hover {
   #left-pane {
     width: 100%;
   }
+  #right-pane {
+    display: none;
+  }
   .mobile-description {
     display: block;
     margin-top: 15px;
