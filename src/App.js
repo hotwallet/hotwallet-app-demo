@@ -118,7 +118,7 @@ class App extends React.PureComponent {
                       backgroundImage: `url("${this.state.article.image}")`
                     }}
                   /> : ''}
-                <h2>{this.state.article.title}</h2>
+                <h2 onClick={this.goToStory}>{this.state.article.title}</h2>
                 <p>{format(this.state.article.publishedAt, 'eeee, MMMM do yyyy')}</p>
                 <p className="description">{this.state.article.description}</p>
                 <p>

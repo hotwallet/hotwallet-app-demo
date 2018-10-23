@@ -7,14 +7,14 @@ main {
   position: relative;
 }
 
-article {
+#left-pane article {
   padding: 10px 25px;
   border-bottom: 1px solid #49525a;
   border-right: 1px solid #49525a;
   font-size: 15px;
 }
 
-article:hover {
+#left-pane article:hover {
   cursor: pointer;
   color: #fff;
   background-color: #282c34;
@@ -58,6 +58,10 @@ h1 {
 
 h2 {
   font-size: 26px;
+}
+h2:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .mobile-description {
