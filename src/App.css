@@ -44,6 +44,7 @@ main {
 #right-pane .img {
   margin-top: -50px;
   height: 200px;
+  background-color: #000;
   background-size: cover;
   background-position: center;
 }
